@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 
 class AboutView(TemplateView):
-    template_name = "pages/about.html"
+    template_name = "page/about.html"
 
 
 class HomeView(TemplateView):
-    template_name = "pages/home.html"
+    template_name = "page/home.html"
