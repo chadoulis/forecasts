@@ -5,3 +5,4 @@
 *.sqlite3
 .idea
 __pycache__
+forecasts/settings/local.py
