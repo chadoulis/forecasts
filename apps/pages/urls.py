@@ -22,7 +22,15 @@ urlpatterns = [
     path('account/groups/', TemplateView.as_view(template_name="page/AccountGroups.html")),
     path('account/settings/', TemplateView.as_view(template_name="page/AccountSettings.html")),
 
-
-  
-    
+    #Group pages    
+    path('group/<str:GroupID>/', TemplateView.as_view(template_name="page/Group.html")),
+    path('group/<str:GroupID>/members/', TemplateView.as_view(template_name="page/GroupMembers.html")),
+    path('group/<str:GroupID>/members/add/', TemplateView.as_view(template_name="page/GroupMembersAdd.html")),    
+    path('group/<str:GroupID>/bets/', TemplateView.as_view(template_name="page/GroupBets.html")),
+    path('group/<str:GroupID>/bets/active/', TemplateView.as_view(template_name="page/GroupBetsActive.html")),
+    path('group/<str:GroupID>/bets/completed/', TemplateView.as_view(template_name="page/GroupBetsCompleted.html")),
+    path('group/<str:GroupID>/bets/create/', TemplateView.as_view(template_name="page/GroupBetsCreate.html")),
+    path('group/<str:GroupID>/bet/<str:BetID>', TemplateView.as_view(template_name="page/GroupBet.html")),
+    path('group/<str:GroupID>/bet/<str:BetID>/add/', TemplateView.as_view(template_name="page/GroupBetAdd.html")),
+     
 ]
