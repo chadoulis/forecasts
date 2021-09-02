@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 
-
+#General Views
 class HomeView(TemplateView):
     template_name = "main_templates/Home.html"
 
@@ -17,3 +17,15 @@ class TermsAndConditionsView(TemplateView):
   
 class PrivacyPolicyView(TemplateView):
     template_name = "main_templates/PrivacyPolicy.html"
+
+#Registration and password Views
+class LoginView(TemplateView):
+    template_name = "main_templates/Login.html"
+class RegisterView(TemplateView):
+    template_name = "main_templates/Register.html"
+class ForgotPasswordView(TemplateView):
+    template_name = "main_templates/ForgotPassword.html"
+class ResetPasswordView(TemplateView):
+    template_name = "main_templates/ResetPassword.html"
+class ConfirmAccountView(TemplateView):
+    template_name = "main_templates/ConfirmAccount.html"
