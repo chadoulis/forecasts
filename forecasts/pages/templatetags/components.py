@@ -9,10 +9,10 @@ class component_io_Button(Component):template='component/io/Button.html'
 class component_decoration_RoundBottomBorder(Component):template='component/decoration/RoundBottomBorder.html'
 
 @register.component
-class page_About(Component):template='page/About.html'
+class page_About(Component):template='main_templates/About.html'
 
 @register.component
-class page_Home(Component):template='page/Home.html'
+class page_Home(Component):template='main_templates/Home.html'
 
 @register.component
 class layout_Root(Component):template='layout/Root.html'
