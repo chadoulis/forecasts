@@ -25,3 +25,11 @@ class ResetPasswordView(TemplateView):
     template_name = "main_templates/ResetPassword.html"
 class ConfirmAccountView(TemplateView):
     template_name = "main_templates/ConfirmAccount.html"
+
+ #Account pages views
+class AccountView(TemplateView):
+    template_name = "main_templates/Account.html"
+class AccountGroupsView(TemplateView):
+    template_name = "main_templates/AccountGroups.html"
+class AccountSettingsView(TemplateView):
+    template_name = "main_templates/AccountSettings.html"

@@ -2,6 +2,7 @@ from django.urls import path
 from django.views.generic import TemplateView
 from forecasts.pages.views import HomeView, AboutView, TeamView , TermsAndConditionsView , PrivacyPolicyView
 from forecasts.pages.views import LoginView, RegisterView, ForgotPasswordView, ResetPasswordView, ConfirmAccountView
+from forecasts.pages.views import AccountView, AccountGroupsView, AccountSettingsView
 
 urlpatterns = [
     #General Pages
@@ -17,4 +18,9 @@ urlpatterns = [
     path('forgot-password/', ForgotPasswordView.as_view()),    
     path('reset-password/<str:TempToken>', ResetPasswordView.as_view()),                        
     path('confirm-account/<str:TempToken>', ConfirmAccountView.as_view()),     
+
+    #Account pages 
+    path('account/', AccountView.as_view()),
+    path('account/groups/', AccountGroupsView.as_view()),
+    path('account/settings/', AccountSettingsView.as_view()),
 ]
