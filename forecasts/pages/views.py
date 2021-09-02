@@ -34,3 +34,23 @@ class AccountGroupsView(TemplateView):
 class AccountSettingsView(TemplateView):
     template_name = "main_templates/AccountSettings.html"
 
+#Group pages views
+class GroupView(TemplateView):
+    template_name = "main_templates/Group.html"
+class GroupMembersView(TemplateView):
+    template_name = "main_templates/GroupMembers.html"
+class GroupMembersAddView(TemplateView):
+    template_name = "main_templates/GroupMembersAdd.html"
+class GroupBetsView(TemplateView):
+    template_name = "main_templates/GroupBets.html"
+class GroupBetsActiveView(TemplateView):
+    template_name = "main_templates/GroupBetsActive.html"
+class GroupBetsCompletedView(TemplateView):
+    template_name = "main_templates/GroupBetsCompleted.html"
+class GroupBetsCreateView(TemplateView):
+    template_name = "main_templates/GroupBetsCreate.html"
+class GroupBetView(TemplateView):
+    template_name = "main_templates/GroupBet.html"
+class GroupBetAddView(TemplateView):
+    template_name = "main_templates/GroupBetAdd.html"
+
