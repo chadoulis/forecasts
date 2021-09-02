@@ -19,3 +19,6 @@ class layout_Root(Component):template='layout/Root.html'
 
 @register.component
 class layout_Simple(Component):template='layout/Simple.html'
+
+@register.component
+class component_containers_Card(Component):template='component/containers/Card.html'
