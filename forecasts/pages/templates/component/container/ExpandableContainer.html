@@ -1,0 +1,22 @@
+{%once 'ExpandableContainer' as once%}
+{%id as id%}
+{%if once%}
+	<script c>
+		var ExpandableContainer={
+			onClick(data,fn){
+				data.changeIcon(data.icon==='caret-up'?'caret-down':'caret-up');
+				data.root.lastElementChild.classList.toggle('sdn');
+				fn(data);
+			}
+		};
+	</script>
+{%endif%}
+{%if hidden%}
+	{%SimpleContainerWithButtonLayout id=id title=title icon="caret-down" hidden=True onclick="ExpandableContainer.onClick(data,()=>{ {{onclick}} })"%}
+	  {{children}}
+	{%/SimpleContainerWithButtonLayout%}
+{%else%}
+	{%SimpleContainerWithButtonLayout id=id title=title icon="caret-up" onclick="ExpandableContainer.onClick(data,()=>{ {{onclick}} })"%}
+	  {{children}}
+	{%/SimpleContainerWithButtonLayout%}
+{%endif%}

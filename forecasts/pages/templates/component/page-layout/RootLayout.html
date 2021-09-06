@@ -6,35 +6,60 @@
 	<base href="{{request.scheme}}://{{request.get_host}}/">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/parallel-3.9.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/icofont.min.css' %}">
     <style c>
+    	/*YOU ARE ALLOWED TO USE ONLY THERE COLORS, ONLY VIEW var(--<ColorName>) */
+		:root{
+			--white0:#f2f2f2;
+			--white1:#fff;
+
+			--gray0:#cfd2d6;
+			--gray1:#d9dcdf;
+
+
+			--blue0:#2a3340;
+			--blue1:#425068;
+
+			--cyan0:#24697a;	/*TODO*/
+			--cyan1:#2c89a0;
+
+			--black0:#494d52;	/*TODO*/
+			--black1:#636669;	/*TODO*/
+		}
+		
+		
 		@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
     	body{
-    		background:#000;
+    		background:black;
+    		color:var(--black0);
     		font-family:'Open Sans', sans-serif;
     	}
+    	button,input{
+    		color:var(--black0);
+    	}
     	body>header{
-    		background:#29425f;
-    		color:#fff
+    		background:var(--blue0);
+    		color:var(--white1);
     	}
     	body>main{
-    		background:#f2f2f2;
+    		background:var(--white0);
     	}
     	body>footer{
-    		background:#d9dcdf;
+    		background:var(--gray1);
     	}
     	body>footer>.bot{
-    		background:#000;
-    		color:#fff
+    		background:black;
+    		color:var(--white1)
     	}
     	a:hover{
-    		color:#b2d375
+    		color:var(--cyan1)
     	}
     </style>
 </head>
 <body>
 	<header class="spx15 spy20">
 		<div class="con">
-			<a href=""><b>HEADER</b></a>
+			<a href=""><b>LOGO</b></a>
 			<nav class="sfr">
 				<a href="">Home</a>
 				&emsp;
@@ -47,7 +72,7 @@
 		</div>
 	</header>
 	<main>
-		{{main}}
+		{{children}}
 	</main>
 	<footer>
 		<div class="mid">
@@ -63,3 +88,4 @@
 	</footer>
 </body>
 </html>
+{%load components%}{%reset%}

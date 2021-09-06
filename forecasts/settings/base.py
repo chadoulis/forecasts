@@ -42,6 +42,7 @@ TEMPLATES = [
             ],
             'builtins': [
                 'django_component.templatetags',
+                'forecasts.pages.templatetags.components'
             ]
         },
     },

@@ -3,13 +3,40 @@ register=Library()
 
 
 @register.component
-class SimpleButton(Component):template='component/io/SimpleButton.html'
+class SimpleContainer(Component):template='component/container/SimpleContainer.html'
+
+@register.component
+class ExpandableContainer(Component):template='component/container/ExpandableContainer.html'
+
+@register.component
+class SimpleContainerLayout(Component):template='component/container/_layout/SimpleContainerLayout.html'
+
+@register.component
+class SimpleContainerWithButtonLayout(Component):template='component/container/_layout/SimpleContainerWithButtonLayout.html'
+
+@register.component
+class SimpleLayout(Component):template='component/page-layout/SimpleLayout.html'
+
+@register.component
+class RootLayout(Component):template='component/page-layout/RootLayout.html'
 
 @register.component
 class RoundBottomBorder(Component):template='component/decoration/RoundBottomBorder.html'
 
 @register.component
-class SimpleContainer(Component):template='component/containers/SimpleContainer.html'
+class ErrorMessage(Component):template='component/message/ErrorMessage.html'
+
+@register.component
+class SubmitButton(Component):template='component/button/SubmitButton.html'
+
+@register.component
+class AnchorButton(Component):template='component/button/AnchorButton.html'
+
+@register.component
+class OnClickButton(Component):template='component/button/OnClickButton.html'
+
+@register.component
+class SimpleButtonLayout(Component):template='component/button/_layout/SimpleButtonLayout.html'
 
 @register.component
 class TermsAndConditions(Component):template='page/TermsAndConditions.html'
@@ -77,8 +104,25 @@ class Team(Component):template='page/Team.html'
 @register.component
 class Home(Component):template='page/Home.html'
 
-@register.component
-class SimpleLayout(Component):template='layout/SimpleLayout.html'
-
-@register.component
-class RootLayout(Component):template='layout/RootLayout.html'
+idIndex=-1
+onceBuffer={}
+@register.simple_tag
+def id():
+	global idIndex
+	idIndex+=1
+	return idIndex
+@register.simple_tag
+def once(comp):
+	global onceBuffer;
+	try:
+		onceBuffer[comp]
+		return False
+	except:
+		onceBuffer[comp]=True
+		return True
+@register.simple_tag
+def reset():
+	global idIndex,onceBuffer
+	idIndex=-1
+	onceBuffer={}
+	return''
