@@ -15,16 +15,16 @@ class SimpleContainerLayout(Component):template='component/container/_layout/Sim
 class SimpleContainerWithButtonLayout(Component):template='component/container/_layout/SimpleContainerWithButtonLayout.html'
 
 @register.component
-class SimpleLayout(Component):template='component/page-layout/SimpleLayout.html'
-
-@register.component
-class RootLayout(Component):template='component/page-layout/RootLayout.html'
-
-@register.component
 class RoundBottomBorder(Component):template='component/decoration/RoundBottomBorder.html'
 
 @register.component
 class ErrorMessage(Component):template='component/message/ErrorMessage.html'
+
+@register.component
+class SimpleLayout(Component):template='component/layout/SimpleLayout.html'
+
+@register.component
+class RootLayout(Component):template='component/layout/RootLayout.html'
 
 @register.component
 class SubmitButton(Component):template='component/button/SubmitButton.html'
