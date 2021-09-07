@@ -1,0 +1,26 @@
+{%RootLayout title='Home Page'%}
+	{%SimpleLayout title='Home Page'%}
+		HOME PAGE
+		<br><br><br>
+		{%AnchorButton text='BUTTON 1'%}{%/AnchorButton%}
+		<br><br><br>
+		{%AnchorButton text='BUTTON 2'%}{%/AnchorButton%}
+		<br><br><br>
+		{%SimpleContainer title="TITLE"%}
+		  CONTENT
+		{%/SimpleContainer%}
+		<br><br><br>
+		{%ExpandableContainer title="TITLE" onclick="console.log(data)"%}
+		  CONTENT
+		{%/ExpandableContainer%}
+		<br><br><br>
+		{%ExpandableContainer title="TITLE" hidden=True onclick="console.log(data)"%}
+		  CONTENT
+		{%/ExpandableContainer%}
+		<br><br><br>
+		{%ErrorMessage title="TITLE"%}
+		  CONTENT
+		{%/ErrorMessage%}
+		<br><br><br>
+	{%/SimpleLayout%}
+{%/RootLayout%}

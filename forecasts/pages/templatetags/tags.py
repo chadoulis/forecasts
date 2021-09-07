@@ -27,13 +27,4 @@ def Pagination(baseUrl,currentPage,totalPages,currentPageRadius):
 	return ob
 
 
-componentIndexData={}
-@register.simple_tag
-def ComponentIndex(componentName,startWith=0):
-	global componentIndexData
-	try:
-		componentIndexData[componentName]
-	except:
-		componentIndexData[componentName]=startWith-1
-	componentIndexData[componentName]+=1
-	return componentIndexData[componentName]
+

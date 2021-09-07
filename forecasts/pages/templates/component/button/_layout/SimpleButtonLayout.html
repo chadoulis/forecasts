@@ -1,0 +1,17 @@
+{%once 'SimpleButtonLayout' as once%}
+{%if once%}
+	<style c>
+		.SimpleButtonLayout{
+			color:var(--white1);
+			background:var(--blue0);
+			border:none;
+			line-height:inherit;
+			font-size:inherit;
+		}
+		.SimpleButtonLayout:hover{
+			color:var(--white1);
+			background:var(--cyan1)
+		}
+	</style>
+{%endif%}
+{{children}}

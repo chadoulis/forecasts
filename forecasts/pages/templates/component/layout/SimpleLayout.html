@@ -1,0 +1,13 @@
+{%load components%}
+<style c>
+	.SimpleLayout.header{
+		background:var(--gray1);
+	}
+</style>
+<header class="s12 stac soh SimpleLayout header">
+	<h1 class="spy30">{{title}}</h1>
+	{%RoundBottomBorder%}{%/RoundBottomBorder%}
+</header>
+<div class="con">
+	{{children}}
+</div>
