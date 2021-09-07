@@ -4,7 +4,6 @@ from forecasts.pages.views import HomeView, AboutView, TeamView , TermsAndCondit
 from forecasts.pages.views import LoginView, RegisterView, ForgotPasswordView, ResetPasswordView, ConfirmAccountView
 from forecasts.pages.views import AccountView, AccountGroupsView, AccountSettingsView
 from forecasts.pages.views import GroupView, GroupMembersView, GroupMembersAddView, GroupBetsView, GroupBetsActiveView, GroupBetsCompletedView, GroupBetsCreateView, GroupBetView, GroupBetAddView
-from forecasts.pages.views import TestsView
 
 urlpatterns = [
     #General Pages
