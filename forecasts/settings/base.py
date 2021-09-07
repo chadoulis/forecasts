@@ -13,7 +13,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_component',
-    'forecasts.pages'
+    'forecasts.pages',
+    'forecasts.users',
+    'forecasts.groups',
+    'forecasts.utils',
 ]
 
 MIDDLEWARE = [
@@ -88,3 +91,5 @@ STATICFILES_DIR=[
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'users.CustomUser'
