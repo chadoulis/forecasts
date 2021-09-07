@@ -36,6 +36,5 @@ urlpatterns = [
     path('group/<str:GroupID>/bet/<str:BetID>', GroupBetView.as_view()),
     path('group/<str:GroupID>/bet/<str:BetID>/add/', GroupBetAddView.as_view()),
 
-    path('tests', TestsView.as_view()),
 
 ]
