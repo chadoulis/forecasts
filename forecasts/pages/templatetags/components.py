@@ -104,6 +104,66 @@ class Team(Component):template='page/Team.html'
 @register.component
 class Home(Component):template='page/Home.html'
 
+@register.component
+class TermsAndConditions(Component):template='main_templates/TermsAndConditions.html'
+
+@register.component
+class GroupBet(Component):template='main_templates/GroupBet.html'
+
+@register.component
+class AccountSettings(Component):template='main_templates/AccountSettings.html'
+
+@register.component
+class ConfirmAccount(Component):template='main_templates/ConfirmAccount.html'
+
+@register.component
+class PrivacyPolicy(Component):template='main_templates/PrivacyPolicy.html'
+
+@register.component
+class ResetPassword(Component):template='main_templates/ResetPassword.html'
+
+@register.component
+class GroupBetAdd(Component):template='main_templates/GroupBetAdd.html'
+
+@register.component
+class GroupBets(Component):template='main_templates/GroupBets.html'
+
+@register.component
+class Login(Component):template='main_templates/Login.html'
+
+@register.component
+class GroupBetsCreate(Component):template='main_templates/GroupBetsCreate.html'
+
+@register.component
+class GroupMembersAdd(Component):template='main_templates/GroupMembersAdd.html'
+
+@register.component
+class GroupMembers(Component):template='main_templates/GroupMembers.html'
+
+@register.component
+class GroupBetsCompleted(Component):template='main_templates/GroupBetsCompleted.html'
+
+@register.component
+class Register(Component):template='main_templates/Register.html'
+
+@register.component
+class ForgotPassword(Component):template='main_templates/ForgotPassword.html'
+
+@register.component
+class GroupBetsActive(Component):template='main_templates/GroupBetsActive.html'
+
+@register.component
+class Group(Component):template='main_templates/Group.html'
+
+@register.component
+class AccountGroups(Component):template='main_templates/AccountGroups.html'
+
+@register.component
+class Account(Component):template='main_templates/Account.html'
+
+@register.component
+class Team(Component):template='main_templates/Team.html'
+
 idIndex=-1
 onceBuffer={}
 @register.simple_tag
