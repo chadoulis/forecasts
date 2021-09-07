@@ -3,20 +3,32 @@
 {%if once%}
 	<script c>
 		var ExpandableContainer={
-			onClick(data,fn){
-				data.changeIcon(data.icon==='caret-up'?'caret-down':'caret-up');
-				data.root.lastElementChild.classList.toggle('sdn');
-				fn(data);
+			onClick(ev,fn){
+				const{
+					id,
+					icon,
+					titleElement,
+					contentElement
+				}=ev;
+				var expanded=icon!=='caret-up';
+				ev.changeIcon(expanded?'caret-up':'caret-down');
+				contentElement.classList.toggle('sdn');
+				fn({
+					id,
+					contentElement,
+					titleElement,
+					expanded
+				});
 			}
 		};
 	</script>
 {%endif%}
-{%if hidden%}
-	{%SimpleContainerWithButtonLayout id=id title=title icon="caret-down" hidden=True onclick="ExpandableContainer.onClick(data,()=>{ {{onclick}} })"%}
+{%if expanded%}
+	{%SimpleContainerWithButtonLayout id=id title=title icon='caret-down' expanded=True onclick='ExpandableContainer.onClick(ev,ev=>{'|add:onclick|add:'})'%}
 	  {{children}}
 	{%/SimpleContainerWithButtonLayout%}
 {%else%}
-	{%SimpleContainerWithButtonLayout id=id title=title icon="caret-up" onclick="ExpandableContainer.onClick(data,()=>{ {{onclick}} })"%}
+	{%SimpleContainerWithButtonLayout id=id title=title icon='caret-up' onclick='ExpandableContainer.onClick(ev,ev=>{'|add:onclick|add:'})'%}
 	  {{children}}
 	{%/SimpleContainerWithButtonLayout%}
 {%endif%}

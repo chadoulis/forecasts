@@ -4,45 +4,51 @@
 	{%/SimpleContainerWithButtonLayout%}
 -->{%endcomment%}
 {%once 'SimpleContainerWithButtonLayout' as once%}
-
-{%SimpleContainerLayout%}
-	{%if once%}
-		<style c>
-			.SimpleContainerLayout>.topRightButon{
-				background:var(--blue0);
-				color:var(--white0);
-				right:8px;
-				top:8px;
+{%if once%}
+	<style c>
+		.SimpleContainerLayout>.topRightButon{
+			background:var(--blue0);
+			color:var(--white0);
+			right:8px;
+			top:8px;
+		}
+		.SimpleContainerLayout>.topRightButon:hover{
+			background:var(--cyan1);
+		}
+	</style>
+	<script c>
+		var SimpleContainerWithButtonLayout={
+			icon:{},
+			onClick(buttonElement,id,fn){
+				const 
+					rootElement=buttonElement.parentNode,
+					contentElement=rootElement.lastElementChild,
+					titleElement=rootElement.firstElementChild
+				;
+				fn({
+					rootElement,
+					contentElement,
+					titleElement,
+					buttonElement,
+					id,
+					icon:SimpleContainerWithButtonLayout.icon[id],
+					changeIcon(icon){
+						SimpleContainerWithButtonLayout.icon[id]=icon;
+						this.buttonElement.firstElementChild.className='icofont-'+icon;
+					}
+				});
 			}
-			.SimpleContainerLayout>.topRightButon:hover{
-				background:var(--cyan1);
-			}
-		</style>
-		<script c>
-			var SimpleContainerWithButtonLayout={
-				icon:{},
-				onClick(button,id,fn){
-					fn({
-						root:button.parentNode,
-						button,
-						id,
-						icon:SimpleContainerWithButtonLayout.icon[id],
-						changeIcon(icon){
-							SimpleContainerWithButtonLayout.icon[id]=icon;
-							this.button.firstElementChild.className='icofont-'+icon;
-						}
-					});
-				}
-			};
-		</script>
-	{%endif%}
-	<script>
-		SimpleContainerWithButtonLayout.icon[{{id}}]='{{icon}}';
+		};
 	</script>
-	<div class="topRightButon spa spx10 spy5 sbr5 scp" onclick="SimpleContainerWithButtonLayout.onClick(this,{{id}},data=>{ {{onclick}} })">
+{%endif%}
+<script>
+	SimpleContainerWithButtonLayout.icon[{{id}}]='{{icon}}';
+</script>
+{%SimpleContainerLayout%}
+	<h4 class="title stac spy10">{{title}}</h4>
+	<div class="topRightButon spa spx10 spy5 sbr5 scp" onclick="SimpleContainerWithButtonLayout.onClick(this,{{id}},ev=>{ {{onclick}} })">
 		<i class="icofont-{{icon}}"></i>
 	</div>
-	<h4 class="title stac spy10">{{title}}</h4>
 	<div class="content{%if hidden%} sdn{%endif%}">{{children}}</div>
 {%/SimpleContainerLayout%}
 

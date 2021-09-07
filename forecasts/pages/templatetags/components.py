@@ -69,10 +69,25 @@ class GroupBets(Component):template='page/GroupBets.html'
 class AccountGroups(Component):template='page/AccountGroups.html'
 
 @register.component
+class ExpandableContainerPage(Component):template='page/example/component/ExpandableContainerPage.html'
+
+@register.component
+class AnchorButtonPage(Component):template='page/example/component/AnchorButtonPage.html'
+
+@register.component
+class JsButtonPage(Component):template='page/example/component/JsButtonPage.html'
+
+@register.component
+class SubmitButtonPage(Component):template='page/example/component/SubmitButtonPage.html'
+
+@register.component
 class ErrorMessage(Component):template='component/message/ErrorMessage.html'
 
 @register.component
 class RoundBottomBorder(Component):template='component/decoration/RoundBottomBorder.html'
+
+@register.component
+class ExampleLayout(Component):template='component/layout/ExampleLayout.html'
 
 @register.component
 class RootLayout(Component):template='component/layout/RootLayout.html'

@@ -1,0 +1,48 @@
+{%RootLayout title='Example: '|add:title%}
+<style>
+	code{
+		float: left;
+		width: 100%;
+		padding: 15px;
+		background: var(--blue0);
+		margin: 20px 0;
+		color: var(--white1);
+		border-radius: 5px;
+		box-sizing:border-box;
+	}
+	code b{
+		color:#ff885a;
+	}
+	hr{
+		float:left;
+		width:100%;
+		border:1px solid #ddd;
+		margin-top:20px
+	}
+	 h4.example{
+		float:left;
+		margin-top:15px;
+	}
+	.ExampleLayout>.header{
+		background:var(--gray1)
+	}
+</style>
+<div class="ExampleLayout">
+	<nav class="header ">
+		<div class="con spx40 spy20">
+			{%for component in availableComponents%}
+				<a href="example/component/{{component}}/">{{component}}</a>
+			{%endfor%}
+		</div>
+	</nav>
+	<div class="con spx40 spy40">
+		<h3 class="s12">
+			Example: <b>{{title}}</b>
+		</h3>
+		<hr>
+		<div class="s12">
+			{{children}}
+		</div>
+	</div>
+</div>
+{%/RootLayout%}
