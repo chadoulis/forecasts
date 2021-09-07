@@ -1,13 +1,14 @@
 {%load components%}
 {%layout_Root title='About'%}{%arg main%}
 	{%layout_Simple title='About'%}{%arg content%}
-    TESTS PAGE<br>
-    <br>
-    <br>
+    TESTS PAGE<br><br><br>
     {%component_io_AnchorButton text='Anchor Button' href='#'%}{%/component_io_AnchorButton%}
     <br><br><br>
     {%component_io_JSButton text='JS Button' onclick='alert(\'hello\')'%}{%/component_io_JSButton%}
-
+    <br><br><br>
+    <form action="#">
+    {%component_io_SubmitButton text='Submit Button'%}{%/component_io_SubmitButton%}
+    </form>
     <br>
     <br>
 	{%endarg%}{%/layout_Simple%}

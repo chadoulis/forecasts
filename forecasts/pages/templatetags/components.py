@@ -24,3 +24,5 @@ class layout_Simple(Component):template='layout/Simple.html'
 class component_io_AnchorButton(Component):template='component/io/buttons/AnchorButton.html'
 @register.component
 class component_io_JSButton(Component):template='component/io/buttons/JSButton.html'
+@register.component
+class component_io_SubmitButton(Component):template='component/io/buttons/SubmitButton.html'
