@@ -26,3 +26,5 @@ class component_io_AnchorButton(Component):template='component/io/buttons/Anchor
 class component_io_JSButton(Component):template='component/io/buttons/JSButton.html'
 @register.component
 class component_io_SubmitButton(Component):template='component/io/buttons/SubmitButton.html'
+@register.component
+class component_io_ResetButton(Component):template='component/io/buttons/ResetButton.html'
