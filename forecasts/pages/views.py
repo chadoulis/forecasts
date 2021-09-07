@@ -53,3 +53,6 @@ class GroupBetView(TemplateView):
     template_name = "main_templates/GroupBet.html"
 class GroupBetAddView(TemplateView):
     template_name = "main_templates/GroupBetAdd.html"
+
+class TestsView(TemplateView):
+    template_name = "main_templates/Tests.html"

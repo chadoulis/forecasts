@@ -4,6 +4,7 @@ from forecasts.pages.views import HomeView, AboutView, TeamView , TermsAndCondit
 from forecasts.pages.views import LoginView, RegisterView, ForgotPasswordView, ResetPasswordView, ConfirmAccountView
 from forecasts.pages.views import AccountView, AccountGroupsView, AccountSettingsView
 from forecasts.pages.views import GroupView, GroupMembersView, GroupMembersAddView, GroupBetsView, GroupBetsActiveView, GroupBetsCompletedView, GroupBetsCreateView, GroupBetView, GroupBetAddView
+from forecasts.pages.views import TestsView
 
 urlpatterns = [
     #General Pages
@@ -35,4 +36,7 @@ urlpatterns = [
     path('group/<str:GroupID>/bets/create/', GroupBetsCreateView.as_view()),
     path('group/<str:GroupID>/bet/<str:BetID>', GroupBetView.as_view()),
     path('group/<str:GroupID>/bet/<str:BetID>/add/', GroupBetAddView.as_view()),
+
+    path('tests', TestsView.as_view()),
+
 ]
