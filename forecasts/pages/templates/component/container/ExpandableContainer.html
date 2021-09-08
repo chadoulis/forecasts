@@ -23,12 +23,6 @@
 		};
 	</script>
 {%endif%}
-{%if expanded%}
-	{%SimpleContainerWithButtonLayout id=id title=title icon='caret-down' expanded=True onclick='ExpandableContainer.onClick(ev,ev=>{'|add:onclick|add:'})'%}
-	  {{children}}
-	{%/SimpleContainerWithButtonLayout%}
-{%else%}
-	{%SimpleContainerWithButtonLayout id=id title=title icon='caret-up' onclick='ExpandableContainer.onClick(ev,ev=>{'|add:onclick|add:'})'%}
-	  {{children}}
-	{%/SimpleContainerWithButtonLayout%}
-{%endif%}
+{%SimpleContainerWithButtonLayout id=id title=title icon='caret-down' expanded=expanded onclick='ExpandableContainer.onClick(ev,ev=>{'|add:onclick|add:'})'%}
+  {{children}}
+{%/SimpleContainerWithButtonLayout%}

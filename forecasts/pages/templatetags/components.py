@@ -75,6 +75,9 @@ class ExpandableContainerPage(Component):template='page/example/component/Expand
 class AnchorButtonPage(Component):template='page/example/component/AnchorButtonPage.html'
 
 @register.component
+class listPage(Component):template='page/example/component/listPage.html'
+
+@register.component
 class JsButtonPage(Component):template='page/example/component/JsButtonPage.html'
 
 @register.component
