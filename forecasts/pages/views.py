@@ -60,6 +60,8 @@ class ExampleView:
 		return render(request,'page/example/component/'+componentName+'Page.html',{
 			'title':componentName,
 			'availableComponents':[
+				'TextInput',
+				'TextareaInput',
 				'AnchorButton',
 				'ExpandableContainer',
 				'JsButton',

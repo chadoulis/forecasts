@@ -1,0 +1,8 @@
+{%id as id%}
+{%TextInputLayout%}
+	<textarea
+		class="TextInputLayout sfl spx10 spy10 sbr5{%if class%} {{class}}{%endif%}"
+		{%if onTextChange%} onkeyup="TextInputLayout.onTextChange({{id}},this,ev=>{ {{onTextChange}} })"{%endif%}
+		{%att placeholder=placeholder name=name minlength=minlength maxlength=maxlength%}
+	>{{children}}</textarea>
+{%/TextInputLayout%}

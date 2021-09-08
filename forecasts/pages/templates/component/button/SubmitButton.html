@@ -1,3 +1,7 @@
 {%SimpleButtonLayout%}
-	<input type="submit" class="SimpleButtonLayout sfl spx10 spy10 sbr5 scp"{%if name%} name="{{name}}"{%endif%} value="{{children}}">
+	<input
+		type="submit"
+		class="SimpleButtonLayout sfl spx10 spy10 sbr5 scp stac{%if class%} {{class}}{%endif%}"
+		{%att name=name value=children%}
+	>
 {%/SimpleButtonLayout%}
