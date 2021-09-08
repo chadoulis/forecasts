@@ -1,0 +1,69 @@
+{%once 'TextInputLayout' as once%}
+{%if once%}
+	<style c>
+		.TextInputLayout{
+			background:var(--white1);
+			border:2px solid var(--gray0);
+			line-height:21px;
+			font-size:inherit;
+			outline:none
+		}
+		.TextInputLayout.orange{
+			border-color:orange
+		}
+		.TextInputLayout.yellow{
+			border-color:GoldenRod
+		}
+		.TextInputLayout.green{
+			border-color:MediumSeaGreen
+		}
+		.TextInputLayout:invalid{
+			border-color:crimson
+		}
+	</style>
+	<script c>
+		var TextInputLayout={
+			skip:{},
+			onTextChange(id,tag,fn){
+				if(!this.skip[id]){
+					this.skip[id]=true;
+					setTimeout(()=>{
+						this.skip[id]=false
+						fn({
+							setStatus(status,message='This field contains errors'){
+								switch(status){
+									case'none':
+										tag.setCustomValidity('');
+										break;
+									case'invalid':
+										tag.setCustomValidity(message);
+										break;
+									case'low':
+										tag.setCustomValidity('');
+										tag.classList.remove('yellow');
+										tag.classList.remove('green');
+										tag.classList.add('orange');
+										break;
+									case'medium':
+										tag.setCustomValidity('');
+										tag.classList.remove('orange');
+										tag.classList.remove('green');
+										tag.classList.add('yellow');
+										break;
+									case'hight':
+										tag.setCustomValidity('');
+										tag.classList.remove('orange');
+										tag.classList.remove('yellow');
+										tag.classList.add('green');
+										break;
+								}
+							},
+							value:tag.value
+						});
+					},1000);
+				}
+			}
+		};
+	</script>
+{%endif%}
+{{children}}

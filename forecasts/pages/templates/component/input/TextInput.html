@@ -1,0 +1,13 @@
+{%id as id%}
+{%once 'TextInput' as once%}
+{%if once%}
+
+{%endif%}
+{%TextInputLayout%}
+	<input
+		type="{%if type == 'email'%}email{%elif type == 'password'%}password{%else%}text{%endif%}"
+		class="TextInputLayout sfl spx10 spy10 sbr5{%if class%} {{class}}{%endif%}"
+		{%if onTextChange%} onkeyup="TextInputLayout.onTextChange({{id}},this,ev=>{ {{onTextChange}} })"{%endif%}
+		{%att placeholder=placeholder value=children name=name minlength=minlength maxlength=maxlength%}
+	>
+{%/TextInputLayout%}

@@ -78,7 +78,13 @@ class AnchorButtonPage(Component):template='page/example/component/AnchorButtonP
 class listPage(Component):template='page/example/component/listPage.html'
 
 @register.component
+class TextInputPage(Component):template='page/example/component/TextInputPage.html'
+
+@register.component
 class JsButtonPage(Component):template='page/example/component/JsButtonPage.html'
+
+@register.component
+class TextareaInputPage(Component):template='page/example/component/TextareaInputPage.html'
 
 @register.component
 class SubmitButtonPage(Component):template='page/example/component/SubmitButtonPage.html'
@@ -109,6 +115,15 @@ class SimpleContainerLayout(Component):template='component/container/_layout/Sim
 
 @register.component
 class SimpleContainerWithButtonLayout(Component):template='component/container/_layout/SimpleContainerWithButtonLayout.html'
+
+@register.component
+class TextInput(Component):template='component/input/TextInput.html'
+
+@register.component
+class TextareaInput(Component):template='component/input/TextareaInput.html'
+
+@register.component
+class TextInputLayout(Component):template='component/input/_layout/TextInputLayout.html'
 
 @register.component
 class JsButton(Component):template='component/button/JsButton.html'
@@ -144,3 +159,11 @@ def reset():
 	idIndex=-1
 	onceBuffer={}
 	return''
+from django.utils.html import format_html
+@register.simple_tag
+def att(**args):
+	b=''
+	for k,v in args.items():
+		if v:
+			b+=' '+k+'="'+v+'"'
+	return format_html(b)
