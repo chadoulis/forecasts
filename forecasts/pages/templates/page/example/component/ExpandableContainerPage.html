@@ -1,0 +1,13 @@
+{%ExampleLayout%}
+	<h4 class="example">Expanded</h4>
+	<code>
+		&lcub;%ExpandableContainer title='<b>Title</b>' onclick='<b>console.log(ev)</b>' expanded=<b>True</b>%}<b>Content</b>&lcub;%/ExpandableContainer%}
+	</code>
+	{%ExpandableContainer title='Title' onclick='console.log(ev)' expanded=True%}Content{%/ExpandableContainer%} 
+	<hr>
+	<h4 class="example">Not Expanded</h4>
+	<code>
+		&lcub;%ExpandableContainer title='<b>Title</b>' onclick='<b>console.log(ev)</b>' expanded=<b>False</b>%}<b>Content</b>&lcub;%/ExpandableContainer%}
+	</code>
+	 {%ExpandableContainer title='Title' onclick='console.log(ev)' expanded=False%}Content{%/ExpandableContainer%} 
+{%/ExampleLayout%}
