@@ -90,6 +90,9 @@ class ErrorMessage(Component):template='component/message/ErrorMessage.html'
 class RoundBottomBorder(Component):template='component/decoration/RoundBottomBorder.html'
 
 @register.component
+class BoxContainer(Component):template='component/container/BoxContainer.html'
+
+@register.component
 class ExampleLayout(Component):template='component/layout/ExampleLayout.html'
 
 @register.component

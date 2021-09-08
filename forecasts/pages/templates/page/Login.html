@@ -1,8 +1,16 @@
-{%load components%}
-{%RootLayout title='Login'%}{%arg main%}
-	{%SimpleLayout title='Login'%}{%arg content%}
-		LOGIN PAGE
-    <br>
-    <a href="forgot-password/">Forgot Password</a>
-	{%endarg%}{%/SimpleLayout%}
-{%endarg%}{%/RootLayout%}
+{%RootLayout title='Login'%}
+  {%SimpleLayout title='Login to your existing account'%}
+      <div class="s4">&nbsp;</div>
+      {%BoxContainer title='Login with email' class='con s4' %}
+      <div class="con spy10">
+        <input class="s12 spy5" type="text" name="" id=""></div>
+      <div class="con spy10">
+        <input class="s12 spy5" type="text" name="" id=""></div>
+      <div class="con stac">
+        {%SubmitButton%}Login{%/SubmitButton%}
+      </div>                
+      {%/BoxContainer%}
+      <div class="s4">&nbsp;</div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+  {%/SimpleLayout%}
+{%/RootLayout%}

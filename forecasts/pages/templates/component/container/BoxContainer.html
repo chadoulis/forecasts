@@ -1,0 +1,14 @@
+<style c>
+  .BoxContainer>.title {
+    background: var(--blue1);
+    color: var(--white1);
+  }
+
+  .BoxContainer>.content {
+    background: var(--gray1)
+  }
+</style>
+<div class="BoxContainer {{class}}">  
+    <h4 class="s12 spx10 spy10 title stac">{{title}}</h4>
+    <div class="s12 spx10 content">{{children}}</div>  
+</div>
