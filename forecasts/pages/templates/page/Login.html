@@ -6,3 +6,17 @@
     <a href="forgot-password/">Forgot Password</a>
 	{%endarg%}{%/SimpleLayout%}
 {%endarg%}{%/RootLayout%}
+
+
+{% block main %}
+<form method="post" action="{% url 'login' %}" role="form">
+	<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+	{{ form.username }}
+	<br>
+	{{ form.password }}
+	<br>
+	<button type="submit">Login</button>
+
+</form>
+{% endblock %}
