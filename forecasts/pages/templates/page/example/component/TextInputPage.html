@@ -1,0 +1,46 @@
+{%ExampleLayout%}
+	<h4 class="example">Simple</h4>
+	<code>
+		&lcub;%TextInput class='<b>s4</b>' name='<b>QueryVar(opt)</b>' placeholder='<b>Placeholder(opt)</b>' minlength='<b>4</b>' maxlength='<b>20</b>'%}<b>DefaultText</b>&lcub;%/TextInput%}
+	</code>
+	<form>
+	 	{%TextInput class='s4' name='QueryVar(opt)' placeholder='Placeholder(opt)' minlength='4' maxlength='20'%}DefaultText{%/TextInput%}
+		{%SubmitButton class="smx10"%}Submit to test{%/SubmitButton%} 
+	 </form>
+	<hr>
+	<h4 class="example">onTextChange</h4>
+	<code>
+		&lt;script><br>
+			function checkValidity(ev){<br>
+				&nbsp;&nbsp;/*ev.setStatus('none');*/<br>
+				&nbsp;&nbsp;if(ev.value.length<6)<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;ev.setStatus('invalid','Put more chars');<br>
+				&nbsp;&nbsp;else if(ev.value.length<8)<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;ev.setStatus('low');<br>
+				&nbsp;&nbsp;else if(ev.value.length<10)<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;ev.setStatus('medium');<br>
+				&nbsp;&nbsp;else<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;ev.setStatus('hight');<br>
+			}<br>
+		&lt;/script>
+		<br><br>
+		&lcub;%TextInput type='<b>password</b>' onTextChange='<b>checkValidity(ev)</b>'%}&lcub;%/TextInput%}
+	</code>
+	<form>
+		<script>
+			function check(ev){
+				/*ev.setStatus('none');*/
+				if(ev.value.length<6)
+					ev.setStatus('invalid','Put more chars');
+				else if(ev.value.length<8)
+					ev.setStatus('low');
+				else if(ev.value.length<10)
+					ev.setStatus('medium');
+				else
+					ev.setStatus('hight');
+			}
+		</script>
+		{%TextInput type='password' onTextChange='check(ev)'%}{%/TextInput%}
+		{%SubmitButton class="smx10"%}Submit to test{%/SubmitButton%} 
+	 </form>
+{%/ExampleLayout%}

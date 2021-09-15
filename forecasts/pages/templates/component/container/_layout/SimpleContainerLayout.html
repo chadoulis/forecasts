@@ -1,0 +1,15 @@
+{%once 'SimpleContainerLayout' as once%}
+{%if once%}
+	<style c>
+	  .SimpleContainerLayout>.title{
+		background:var(--blue1);
+		color:var(--white1);
+	  }
+	  .SimpleContainerLayout>.content{
+		background:var(--gray1)
+	  }
+	</style>
+{%endif%}
+<div class="s12 SimpleContainerLayout spr sbr5 soh">
+	{{children}}
+</div>

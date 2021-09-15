@@ -1,0 +1,28 @@
+{%once 'ExpandableContainer' as once%}
+{%id as id%}
+{%if once%}
+	<script c>
+		var ExpandableContainer={
+			onClick(ev,fn){
+				const{
+					id,
+					icon,
+					titleElement,
+					contentElement
+				}=ev;
+				var expanded=icon!=='caret-up';
+				ev.changeIcon(expanded?'caret-up':'caret-down');
+				contentElement.classList.toggle('sdn');
+				fn({
+					id,
+					contentElement,
+					titleElement,
+					expanded
+				});
+			}
+		};
+	</script>
+{%endif%}
+{%SimpleContainerWithButtonLayout id=id title=title icon='caret-down' expanded=expanded onclick='ExpandableContainer.onClick(ev,ev=>{'|add:onclick|add:'})'%}
+  {{children}}
+{%/SimpleContainerWithButtonLayout%}

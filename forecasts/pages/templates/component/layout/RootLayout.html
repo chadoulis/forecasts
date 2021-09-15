@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}} - Forecasts</title>
+	<base href="{{request.scheme}}://{{request.get_host}}/">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/parallel-4.0.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/icofont.min.css' %}">
+    <style c>
+    	/*YOU ARE ALLOWED TO USE ONLY THERE COLORS, ONLY VIEW var(--<ColorName>) */
+		:root{
+			--white0:#f2f2f2;
+			--white1:#fff;
+
+			--gray0:#cfd2d6;
+			--gray1:#d9dcdf;
+
+
+			--blue0:#2a3340;
+			--blue1:#425068;
+
+			--cyan0:#24697a;	/*TODO*/
+			--cyan1:#2c89a0;
+
+			--black0:#494d52;	/*TODO*/
+			--black1:#636669;	/*TODO*/
+		}
+		
+		
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    	body{
+    		background:black;
+    		color:var(--black0);
+    		font-family:'Open Sans', sans-serif;
+    	}
+    	button,input{
+    		color:var(--black0);
+    	}
+    	body>header{
+    		background:var(--blue0);
+    		color:var(--white1);
+    	}
+    	body>main{
+    		background:var(--white0);
+    	}
+    	body>footer{
+    		background:var(--gray1);
+    	}
+    	body>footer>.bot{
+    		background:black;
+    		color:var(--white1)
+    	}
+    	a:hover{
+    		color:var(--cyan1)
+    	}
+    </style>
+</head>
+<body>
+	<header class="spx15 spy20">
+		<div class="con">
+			<a href=""><b>LOGO</b></a>
+			<nav class="sfr">
+				<a href="">Home</a>
+				&emsp;
+				<a href="about/">About</a>
+        &emsp;
+        <a href="{% url 'login' %}">Login</a>
+        &emsp;
+        <a href="{% url 'register' %}">Register</a>
+			</nav>
+		</div>
+	</header>
+	<main>
+		{{children}}
+	</main>
+	<footer>
+		<div class="mid">
+			<a href="team/">Team</a>
+      &emsp;
+      <a href="terms-and-conditions/">Terms</a>
+      &emsp;
+      <a href="privacy-policy/">Privacy Policy</a> 
+		</div>
+		<div class="bot stac spy10 sfs09">
+			All Rights Reserved
+		</div>
+	</footer>
+</body>
+</html>
+{%load components%}{%reset%}

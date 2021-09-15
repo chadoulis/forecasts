@@ -1,0 +1,18 @@
+{%once 'ErrorMessage' as once%}
+{%if once%}
+	<style c>
+	  .ErrorMessage{
+		color:var(--white1);
+	  }
+	  .ErrorMessage>.title{
+		background:#731a3f;
+	  }
+	  .ErrorMessage>.content{
+		background:#570e2d
+	  }
+	</style>
+{%endif%}
+<div class="ErrorMessage spr sbr10 soh">
+	<h4 class="title stac spy10">{{title}}</h4>
+	<div class="content spx10 spy10">{{children}}</div>
+</div>
