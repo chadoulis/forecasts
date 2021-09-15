@@ -93,3 +93,6 @@ STATICFILES_DIR=[
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.CustomUser'
+
+# Url to redirect after success login
+LOGIN_REDIRECT_URL = '/users/profile'

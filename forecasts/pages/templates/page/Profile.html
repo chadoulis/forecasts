@@ -1,0 +1,17 @@
+{%load components%}
+{%RootLayout title='Login'%}{%arg main%}
+{%SimpleLayout title='Login'%}{%arg content%}
+LOGIN PAGE
+<br>
+<a href="{% url 'profile' %}">Profile</a>
+{%endarg%}{%/SimpleLayout%}
+{%endarg%}{%/RootLayout%}
+
+
+{% block main %}
+    User: {{user}}
+    <br>
+    {% if view_settings %}
+        Maybe some settings
+    {% endif %}
+{% endblock %}

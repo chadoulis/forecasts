@@ -1,10 +1,6 @@
 from django.urls import path
 from django.views.generic import TemplateView
-from forecasts.pages.views import HomeView, AboutView, TeamView , TermsAndConditionsView , PrivacyPolicyView
-from forecasts.pages.views import LoginView, RegisterView, ForgotPasswordView, ResetPasswordView, ConfirmAccountView
-from forecasts.pages.views import AccountView, AccountGroupsView, AccountSettingsView
-from forecasts.pages.views import GroupView, GroupMembersView, GroupMembersAddView, GroupBetsView, GroupBetsActiveView, GroupBetsCompletedView, GroupBetsCreateView, GroupBetView, GroupBetAddView
-from forecasts.pages.views import ExampleView
+from forecasts.pages.views import *
 
 urlpatterns = [
     #General Pages
@@ -14,12 +10,8 @@ urlpatterns = [
     path('terms-and-conditions/', TermsAndConditionsView.as_view()),
     path('privacy-policy/', PrivacyPolicyView.as_view()),
 
-    #Registration and password pages
-    path('login/', LoginView.as_view()),
-    path('register/', RegisterView.as_view()),
-    path('forgot-password/', ForgotPasswordView.as_view()),    
-    path('reset-password/<str:TempToken>', ResetPasswordView.as_view()),                        
-    path('confirm-account/<str:TempToken>', ConfirmAccountView.as_view()),     
+    # Registration and password pages
+    # Moved to users
 
     #Account pages 
     path('account/', AccountView.as_view()),

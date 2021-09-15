@@ -13,19 +13,6 @@ class TermsAndConditionsView(TemplateView):
 	template_name = "page/TermsAndConditions.html"  
 class PrivacyPolicyView(TemplateView):
 	template_name = "page/PrivacyPolicy.html"
-
-#Registration and password views
-class LoginView(TemplateView):
-	template_name = "page/Login.html"
-class RegisterView(TemplateView):
-	template_name = "page/Register.html"
-class ForgotPasswordView(TemplateView):
-	template_name = "page/ForgotPassword.html"
-class ResetPasswordView(TemplateView):
-	template_name = "page/ResetPassword.html"
-class ConfirmAccountView(TemplateView):
-	template_name = "page/ConfirmAccount.html"
-
  #Account pages views
 class AccountView(TemplateView):
 	template_name = "page/Account.html"
